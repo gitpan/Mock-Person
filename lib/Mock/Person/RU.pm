@@ -1,41 +1,13 @@
 package Mock::Person::RU;
+{
+  $Mock::Person::RU::VERSION = '0.02';
+}
 
-=encoding UTF-8
-=cut
 
-=head1 NAME
 
-Mock::Person::RU - background module for L<Mock::Person> that generates russians.
-
-=cut
-
-=head1 DESCRIPTION
-
-Data for this module was found on these pages:
-
-=over
-
-=item B<Last names>
-
-http://www.kommersant.ru/doc.aspx?DocsID=611986
-
-=item B<Middle names>
-
-http://ru.wiktionary.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D1%82%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0
-http://ru.wiktionary.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D1%82%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0
-http://names.neolove.ru/female_otchestvo/
-
-=item B<First names>
-
-http://rebenok.by/articles/names/stat/~do=rate
-
-=back
-
-=cut
 use strict;
 use warnings;
 use utf8;
-our $VERSION = '0.01';
 
 my @first_male = qw(
 Владислав
@@ -1079,14 +1051,6 @@ my @last_female = qw(
 Турова
 );
 
-=head1 GENERAL FUNCTIONS
-
-=head2 name
-
-Recieves scalar with sex of the person ('male' or 'female') and returns
-scalar with generated name.
-
-=cut
 sub name {
     my ($sex) = @_;
 
@@ -1098,58 +1062,112 @@ sub name {
     }
 }
 
-=head2 first_male 
-
-Returns random fists name of male person.
-
-=cut
 sub first_male {
      return $first_male[rand @first_male];
 }
 
-=head2 first_female 
-
-Returns random fists name of female person.
-
-=cut
 sub first_female {
      return $first_female[rand @first_female];
 }
 
-=head2 middle_male 
-
-Returns random middle name of male person.
-
-=cut
 sub middle_male {
      return $middle_male[rand @middle_male];
 }
 
-=head2 middle_female 
-
-Returns random middle name of female person.
-
-=cut
 sub middle_female {
      return $middle_female[rand @middle_female];
 }
 
-=head2 last_male 
-
-Returns random last name of male person.
-
-=cut
 sub last_male {
      return $last_male[rand @last_male];
 }
 
-=head2 last_female 
-
-Returns random last name of female person.
-
-=cut
 sub last_female {
      return $last_female[rand @last_female];
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Mock::Person::RU
+
+=head1 VERSION
+
+version 0.02
+
+=head1 DESCRIPTION
+
+Data for this module was found on these pages:
+
+=over
+
+=item B<Last names>
+
+http://www.kommersant.ru/doc.aspx?DocsID=611986
+
+=item B<Middle names>
+
+http://ru.wiktionary.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D1%82%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0
+http://ru.wiktionary.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D1%82%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0
+http://names.neolove.ru/female_otchestvo/
+
+=item B<First names>
+
+http://rebenok.by/articles/names/stat/~do=rate
+
+=back
+
+=encoding UTF-8
+
+=head1 NAME
+
+Mock::Person::RU - background module for L<Mock::Person> that generates russians.
+
+=head1 GENERAL FUNCTIONS
+
+=head2 name
+
+Recieves scalar with sex of the person ('male' or 'female') and returns
+scalar with generated name.
+
+=head2 first_male
+
+Returns random fists name of male person.
+
+=head2 first_female
+
+Returns random fists name of female person.
+
+=head2 middle_male
+
+Returns random middle name of male person.
+
+=head2 middle_female
+
+Returns random middle name of female person.
+
+=head2 last_male
+
+Returns random last name of male person.
+
+=head2 last_female
+
+Returns random last name of female person.
+
+=head1 AUTHOR
+
+Ivan Bessarabov <ivan@bessarabov.ru>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ivan Bessarabov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

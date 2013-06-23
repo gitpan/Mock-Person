@@ -1,27 +1,55 @@
 package Mock::Person;
+{
+  $Mock::Person::VERSION = '0.02';
+}
 
-=encoding UTF-8
-=cut
+# ABSTRACT: generates random last, first and middle name of person.
+
+
+use strict;
+use warnings;
+use utf8;
+
+
+sub name {
+    my (%h) = @_;
+
+    my $sex = $h{sex};
+    my $country= $h{country};
+
+    $sex ||= "male";
+    $country ||= "ru";
+
+    if (uc($country) eq "RU") {
+        use Mock::Person::RU;
+    };
+
+    return Mock::Person::RU::name($sex);
+}
+
+
+1;
+
+__END__
+
+=pod
 
 =head1 NAME
 
 Mock::Person - generates random last, first and middle name of person.
 
-=cut
+=head1 VERSION
 
-use strict;
-use warnings;
-use utf8;
-our $VERSION = '0.01';
+version 0.02
 
-=head1 SYNOPSIS 
+=head1 SYNOPSIS
 
-    binmode STDOUT, ":utf8"; 
+    binmode STDOUT, ":utf8";
     use Mock::Person;
     print Mock::Person::name(sex => "male") . "\n";
     # Will print something like "Блохин Лев Владимирович"
 
-=cut
+=encoding UTF-8
 
 =head1 GENERAL FUNCTIONS
 
@@ -43,31 +71,19 @@ Sets the ethnic group of person's name. Default value is 'ru'.
 
 Returns scalar with generated name.
 
-=cut
-sub name {
-    my (%h) = @_;
-
-    my $sex = $h{sex};
-    my $country= $h{country};
-    
-    $sex ||= "male";
-    $country ||= "ru";
-
-    if (uc($country) eq "RU") {
-        use Mock::Person::RU;
-    };
-
-    return Mock::Person::RU::name($sex);
-}
-
-=head1 AUTHOR
-
-Ivan Bessarabov, C<< <ivan@bessarabov.ru> >>
-
-=head1 SOURCE CODE 
+=head1 SOURCE CODE
 
 The source code for this module is hosted on GitHub http://github.com/bessarabov/Mock-Person
 
-=cut
+=head1 AUTHOR
 
-1;
+Ivan Bessarabov <ivan@bessarabov.ru>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ivan Bessarabov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
