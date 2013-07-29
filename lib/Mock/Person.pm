@@ -1,6 +1,6 @@
 package Mock::Person;
 {
-  $Mock::Person::VERSION = '0.02';
+  $Mock::Person::VERSION = '1.0.0';
 }
 
 # ABSTRACT: generates random last, first and middle name of person.
@@ -40,7 +40,7 @@ Mock::Person - generates random last, first and middle name of person.
 
 =head1 VERSION
 
-version 0.02
+version 1.0.0
 
 =head1 SYNOPSIS
 
@@ -48,6 +48,9 @@ version 0.02
     use Mock::Person;
     print Mock::Person::name(sex => "male") . "\n";
     # Will print something like "Блохин Лев Владимирович"
+
+Mock::Person uses Semantic Versioning standart for version numbers.
+Please visit L<http://semver.org/> to find out all about this great thing.
 
 =encoding UTF-8
 
@@ -70,6 +73,14 @@ Sets the ethnic group of person's name. Default value is 'ru'.
 =back
 
 Returns scalar with generated name.
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item * Сергей Романов (SROMANOV)
+
+=back
 
 =head1 SOURCE CODE
 

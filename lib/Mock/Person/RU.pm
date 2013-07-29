@@ -1,6 +1,6 @@
 package Mock::Person::RU;
 {
-  $Mock::Person::RU::VERSION = '0.02';
+  $Mock::Person::RU::VERSION = '1.0.0';
 }
 
 
@@ -1098,7 +1098,7 @@ Mock::Person::RU
 
 =head1 VERSION
 
-version 0.02
+version 1.0.0
 
 =head1 DESCRIPTION
 

@@ -5,8 +5,8 @@ META.yml
 Makefile.PL
 README
 dist.ini
+examples/sample.pl
 lib/Mock/Person.pm
 lib/Mock/Person/RU.pm
-samle.pl
 t/001_module_loader.t
 t/002_generate_person.t
