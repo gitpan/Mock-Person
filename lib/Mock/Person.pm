@@ -1,14 +1,23 @@
 package Mock::Person;
 {
-  $Mock::Person::VERSION = '1.0.0';
+  $Mock::Person::VERSION = '1.0.1';
 }
 
 # ABSTRACT: generates random last, first and middle name of person.
 
-
 use strict;
 use warnings;
 use utf8;
+
+## Hack - start
+#
+# There is a problem with Dist::Zilla PodWeaver
+# Because of that problem I had to put `=encoding UTF-8` after `=head1 SYNOPSIS`
+# But it should be in very top of the file.
+#
+# See details (in Russian language) at https://github.com/bessarabov/Mock-Person/issues/4
+#
+## Hack - end
 
 
 sub name {
@@ -40,9 +49,11 @@ Mock::Person - generates random last, first and middle name of person.
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SYNOPSIS
+
+=encoding UTF-8
 
     binmode STDOUT, ":utf8";
     use Mock::Person;
@@ -51,8 +62,6 @@ version 1.0.0
 
 Mock::Person uses Semantic Versioning standart for version numbers.
 Please visit L<http://semver.org/> to find out all about this great thing.
-
-=encoding UTF-8
 
 =head1 GENERAL FUNCTIONS
 
