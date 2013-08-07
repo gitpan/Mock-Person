@@ -1,8 +1,9 @@
 package Mock::Person::RU;
 {
-  $Mock::Person::RU::VERSION = '1.0.1';
+  $Mock::Person::RU::VERSION = '1.0.2';
 }
 
+# ENCODING: UTF-8
 
 
 use strict;
@@ -1092,13 +1093,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Mock::Person::RU
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.2
 
 =head1 DESCRIPTION
 
@@ -1121,8 +1124,6 @@ http://names.neolove.ru/female_otchestvo/
 http://rebenok.by/articles/names/stat/~do=rate
 
 =back
-
-=encoding UTF-8
 
 =head1 NAME
 
