@@ -8,6 +8,7 @@ dist.ini
 examples/sample.pl
 lib/Mock/Person.pm
 lib/Mock/Person/RU.pm
+lib/Mock/Person/US.pm
 t/001_module_loader.t
 t/002_generate_person.t
 weaver.ini

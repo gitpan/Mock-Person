@@ -1,6 +1,6 @@
 package Mock::Person::RU;
 {
-  $Mock::Person::RU::VERSION = '1.0.2';
+  $Mock::Person::RU::VERSION = '1.1.0';
 }
 
 # ENCODING: UTF-8
@@ -1101,7 +1101,7 @@ Mock::Person::RU
 
 =head1 VERSION
 
-version 1.0.2
+version 1.1.0
 
 =head1 DESCRIPTION
 

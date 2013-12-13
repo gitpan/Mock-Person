@@ -1,6 +1,6 @@
 package Mock::Person;
 {
-  $Mock::Person::VERSION = '1.0.2';
+  $Mock::Person::VERSION = '1.1.0';
 }
 
 # ABSTRACT: generates random last, first and middle name of person.
@@ -22,9 +22,12 @@ sub name {
 
     if (uc($country) eq "RU") {
         use Mock::Person::RU;
+        return Mock::Person::RU::name($sex);
+    }
+    elsif (uc($country) eq "US") {
+        use Mock::Person::US;
+        return Mock::Person::US::name($sex);
     };
-
-    return Mock::Person::RU::name($sex);
 }
 
 
@@ -42,13 +45,13 @@ Mock::Person - generates random last, first and middle name of person.
 
 =head1 VERSION
 
-version 1.0.2
+version 1.1.0
 
 =head1 SYNOPSIS
 
     binmode STDOUT, ":utf8";
     use Mock::Person;
-    print Mock::Person::name(sex => "male") . "\n";
+    print Mock::Person::name(sex => "male", country => "ru") . "\n";
     # Will print something like "Блохин Лев Владимирович"
 
 Mock::Person uses Semantic Versioning standart for version numbers.
@@ -77,6 +80,8 @@ Returns scalar with generated name.
 =head1 CONTRIBUTORS
 
 =over 4
+
+=item * Gene Boggs (GENE)
 
 =item * Сергей Романов (SROMANOV)
 
